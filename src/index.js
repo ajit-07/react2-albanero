@@ -27,21 +27,49 @@ return <h1>{message}</h1>
 }
 
 root.render(<App/>)*/
-import React from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import NameList from './ListRendering'
 import PersonList from './person'
+import Frag from './fragment'
+import Table from './tables'
+import Todo from './Todo'
+import HookCounter from './hookCounter1'
+import HookMouse from './HookMouse'
+import MouseContainer from './mouseContainer'
+import IntervalHookCounter from './intervalhookcounter'
+import DataFetch from './useEffectFetchdata'
+import Component1 from './comp1'
 
 const el = document.getElementById('root')
 const root = ReactDOM.createRoot(el)
+export const userContext = React.createContext()
+export const learnContext = React.createContext()
 root.render(
   <>
-  <App />
+    {/*<App />
   <NameList />
   <PersonList />
+*/} {/*
+    <Frag />
+    <Table />
+<Todo />*/}
+    {/*<HookCounter />*/}
+    {/*<HookMouse />*/}
+    {/*<MouseContainer />*/}
+    {/*<IntervalHookCounter />*/}
+    {/*<DataFetch />*/}
+    <userContext.Provider value={'Ajit'}>
+      <learnContext.Provider value={'Learning React'}>
+        <Component1 />
+      </learnContext.Provider>
+    </userContext.Provider>
   </>
 )
+//stEP1 TO CREATE CONTEXT  USING CREATECONTEXT MEHTOD.2)provide a value to the context and and provider must wrap child
+//component to made the value availavble
+//3.consume the context value and export it first then import it.
 
 
 
